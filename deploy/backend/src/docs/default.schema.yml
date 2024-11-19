@@ -1,0 +1,36 @@
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+        error:
+          type: object
+          properties:
+            code:
+              type: number
+            message:
+              type: string
+        stack:
+          type: string
+          required: false
+      example:
+        success: false
+        error:
+          code: 404
+          message: Not found
+        stack: not found
+
+    Success:
+      type: object
+      properties:
+        success:
+          type: boolean
+          required: true
+        message:
+          type: string
+          required: false
+        content:
+          type: object
+          required: false

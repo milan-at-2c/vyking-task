@@ -1,0 +1,58 @@
+components:
+  schemas:
+    Player:
+      type: object
+      properties:
+        id:
+          type: integer
+        name:
+          type: string
+        walletAddress:
+          type: string
+        walletPrivateKey:
+          type: string
+        walletPublicKey:
+          type: string
+        createdAt:
+          type: string
+        updatedAt:
+          type: string
+      example:
+        id: 1
+        name: "John Doe"
+        walletAddress: "BZk6CqctDWedvjPwE7wG6DVXR9pJDNjedjXoWeRyHbhQ"
+        walletPrivateKey: "254, 123, 213"
+        walletPublicKey: "BZk6CqctDWedvjPwE7wG6DVXR9pJDNjedjXoWeRyHbhQ"
+        createdAt: "2021-01-01T00:00:00.000Z"
+        updatedAt: "2021-01-01T00:00:00.000Z"
+    FundPlayerWalletRequest:
+      type: object
+      properties:
+        playerId:
+          type: integer
+      example:
+        playerId: 1
+    FundPlayerWalletResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        message:
+          type: string
+      example:
+        success: true
+        message: "Wallet funded successfully"
+    PlayerBalance:
+      type: object
+      properties:
+        success:
+          type: boolean
+        content:
+          type: object
+          properties:
+            balance:
+              type: number
+      example:
+        success: true
+        content:
+          balance: 1000000000

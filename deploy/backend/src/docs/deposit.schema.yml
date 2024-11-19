@@ -1,0 +1,34 @@
+components:
+  schemas:
+    CreateDepositRequest:
+      type: object
+      properties:
+        playerId:
+          type: integer
+        amount:
+          type: number
+      example:
+        playerId: 1
+        amount: 0.15
+    CreateDepositResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        content:
+          type: object
+          properties:
+            id:
+              type: number
+            status:
+              type: string
+    DepositStatusResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        content:
+          type: object
+          properties:
+            status:
+              type: string
