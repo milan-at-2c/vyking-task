@@ -29,3 +29,4 @@ Note: The cron job is called every minute and it takes all the pending deposits 
 1. By default after first run the database migrations will automatically be run.
 2. Environment variables are left in the repository just as this is sample task.
 3. To get more information about how to use API endpoints: http://localhost:3000/api-docs/
+4. Postman collection can be found in the root of the project

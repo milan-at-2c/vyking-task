@@ -1,5 +1,6 @@
 import { Connection } from "@solana/web3.js";
 
+import { config } from "../config/config";
 import { logger } from "../config/logger";
 import { redis } from "../index";
 import {
@@ -18,7 +19,7 @@ export const checkTransactionsHistory = async () => {
       return;
     }
 
-    connection = new Connection("https://api.testnet.solana.com", "confirmed");
+    connection = new Connection(config.solana.network, "confirmed");
 
     const promises = transactions.map(async (transaction) => {
       const { id, txId, status: currentStatus } = transaction;

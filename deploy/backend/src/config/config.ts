@@ -20,6 +20,7 @@ const envVars = cleanEnv(
     DB_EXTERNAL_PORT: num(),
     REDIS_HOST: str(),
     REDIS_PORT: num(),
+    SOLANA_NETWORK: str(),
   },
   {
     reporter: ({ errors }) => {
@@ -58,5 +59,8 @@ export const config = {
   redis: {
     host: envVars.REDIS_HOST,
     port: envVars.REDIS_PORT,
-  }
+  },
+  solana: {
+    network: envVars.SOLANA_NETWORK,
+  },
 };

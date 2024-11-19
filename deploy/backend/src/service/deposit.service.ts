@@ -8,6 +8,7 @@ import {
 } from "@solana/web3.js";
 import httpStatus from "http-status";
 
+import { config } from "../config/config";
 import { logger } from "../config/logger";
 import { redis } from "../index";
 import { getDepositWalletQuery } from "../models/depositWallet.model";
@@ -23,10 +24,7 @@ export const createDepositTransaction = async (
   amount: number,
 ) => {
   try {
-    const connection = new Connection(
-      "https://api.testnet.solana.com",
-      "confirmed",
-    );
+    const connection = new Connection(config.solana.network, "confirmed");
 
     const player = await getPlayerByIdQuery(playerId);
 
